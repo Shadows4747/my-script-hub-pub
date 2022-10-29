@@ -1,1 +1,1274 @@
-game.Players.LocalPlayer:Kick("LOL GET TROLLED NOOB GO USE KEY SYSTEM")
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Shadows #4747", "Synapse")
+
+-- MAIN
+local Tab = Window:NewTab("FE")
+local Section = Tab:NewSection("Main")
+
+
+Section:NewToggle("go fast like car", "vrom", function(state)
+    if state then
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 120
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 120
+    else
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+    end
+end)
+
+Section:NewSlider("WalkSpeed", "idiot", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewSlider("JumpPower", "idiot", 200, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+Section:NewButton("Inf Yield", "admin script", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section:NewButton("Jump", "its fe", function()
+wait(5)
+
+--[[ Info ]]--
+
+local ver = "2.00"
+local scriptname = "feFlip"
+
+
+--[[ Keybinds ]]--
+
+local FrontflipKey = Enum.KeyCode.Z
+local BackflipKey = Enum.KeyCode.X
+local AirjumpKey = Enum.KeyCode.C
+
+
+--[[ Dependencies ]]--
+
+local ca = game:GetService("ContextActionService")
+local zeezy = game:GetService("Players").LocalPlayer
+local h = 0.0174533
+local antigrav
+
+
+--[[ Functions ]]--
+
+function zeezyFrontflip(act,inp,obj)
+    if inp == Enum.UserInputState.Begin then
+        zeezy.Character.Humanoid:ChangeState("Jumping")
+        wait()
+        zeezy.Character.Humanoid.Sit = true
+        for i = 1,360 do 
+            delay(i/720,function()
+            zeezy.Character.Humanoid.Sit = true
+                zeezy.Character.HumanoidRootPart.CFrame = zeezy.Character.HumanoidRootPart.CFrame * CFrame.Angles(-h,0,0)
+            end)
+        end
+        wait(0.55)
+        zeezy.Character.Humanoid.Sit = false
+    end
+end
+
+function zeezyBackflip(act,inp,obj)
+    if inp == Enum.UserInputState.Begin then
+        zeezy.Character.Humanoid:ChangeState("Jumping")
+        wait()
+        zeezy.Character.Humanoid.Sit = true
+        for i = 1,360 do
+            delay(i/720,function()
+            zeezy.Character.Humanoid.Sit = true
+                zeezy.Character.HumanoidRootPart.CFrame = zeezy.Character.HumanoidRootPart.CFrame * CFrame.Angles(h,0,0)
+            end)
+        end
+        wait(0.55)
+        zeezy.Character.Humanoid.Sit = false
+    end
+end
+
+function zeezyAirjump(act,inp,obj)
+    if inp == Enum.UserInputState.Begin then
+        zeezy.Character:FindFirstChildOfClass'Humanoid':ChangeState("Seated")
+        wait()
+        zeezy.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")    
+    end
+end
+
+
+--[[ Binds ]]--
+
+ca:BindAction("zeezyFrontflip",zeezyFrontflip,false,FrontflipKey)
+ca:BindAction("zeezyBackflip",zeezyBackflip,false,BackflipKey)
+ca:BindAction("zeezyAirjump",zeezyAirjump,false,AirjumpKey)
+
+--[[ Load Message ]]--
+
+print(scriptname .. " " .. ver .. " loaded successfully")
+print("made by Zeezy#7203")
+
+local notifSound = Instance.new("Sound",workspace)
+notifSound.PlaybackSpeed = 1.5
+notifSound.Volume = 0.15
+notifSound.SoundId = "rbxassetid://170765130"
+notifSound.PlayOnRemove = true
+notifSound:Destroy()
+game.StarterGui:SetCore("SendNotification", {Title = "feFlip", Text = "feFlip loaded successfully!", Icon = "rbxassetid://505845268", Duration = 5, Button1 = "Okay"})
+end)
+
+Section:NewButton("Universal Aimbot", "dont blame me if it doesnt work", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/Wheeleee/AIMWARE/main/Startup")()
+end)
+
+-- BLOX FRUITS
+local Tab = Window:NewTab("Script Page 1")
+local Section = Tab:NewSection("Blox Fruits, FE not reccomended")
+
+Section:NewButton("ZenHub", "blox fruit", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kaizenofficiall/ZenHub/main/bloxfrui%20v0.3", true))()
+end)
+
+Section:NewButton("Mukuro Quartyz", "funky", function()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/xQuartyx/DonateMe/main/ScriptLoader")()
+end)
+
+--Isle 9
+local Section = Tab:NewSection("Isle 9, FE can be used in lobby")
+
+Section:NewButton("Krypton", "Best Isle script -Shadows", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/PascalHacks/Krypton/main/Games/3431407618'))()
+end)
+
+
+Section:NewButton("Standard", "script has been deleted", function()
+loadstring(game:HttpGet("https://paste.ee/r/4MNCw/0"))()
+end)
+
+-- Decaying Winter
+local Section = Tab:NewSection("Decaying Winter, FE definitely not reccomended")
+
+Section:NewButton("Butter Hub", "Best Decaying winter script", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Aidez/decaying_winter/main/GOODWILL_COMMAND_SCRIPT'),true))()
+end)
+
+--Micheals Zombie's
+
+local Section = Tab:NewSection("Micheals Zombies")
+
+Section:NewButton("Script 1", "seems good", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SlamminPig/rblxgames/main/Michael's%20Zombies/MichaelsZombiesGUI"))()
+end)
+
+--Combat Warriors
+local Section = Tab:NewSection("Combat Warriors")
+
+Section:NewButton("Project Hook", "PROJECT HOOK ON TOP!", function()
+loadstring(game:HttpGet("https://projecthook.xyz/scripts/free.lua"))()
+end)
+
+Section:NewButton("Hydra Hub", "pipe bomb", function()
+loadstring(game:HttpGet("https://cheeseskid.tk/shit/combat_warriors.lua",true))()
+end)
+
+--Project Slayers
+local Section = Tab:NewSection("Project Slayers")
+
+Section:NewButton("Skays Hub", "RAAAAHH", function()
+getgenv().Script = "SKAYS-HUB"
+getgenv().Loader = "Loader.skays"
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GramxPerson/'..Script..'/main/'..Loader))()
+end)
+
+--YBA
+local Section = Tab:NewSection("YBA")
+
+Section:NewButton("YBA SUCKS ASS", "FRFR", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Tobias020108Back/YBA-AUT/main/YBA-GUI-Rewrite.lua"))()
+end)
+
+--AU REBORN
+local Section = Tab:NewSection("get team combo'd simulator AU:REBORN")
+
+Section:NewButton("Instant Awaken", "INF AWAKEN", function()
+loadstring(game:HttpGet('https://hastebin.com/raw/umisagohag'))()
+end)
+--Doors
+local Section = Tab:NewSection("Doors Made by Shadows#4747")
+
+Section:NewButton("Doors made by me", "had to use orion ui lib", function()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Doors", HidePremium = false, SaveConfig = true, ConfigFolder = "DoorsSex"})
+local VisualsTab = Window:MakeTab({
+	Name = "Visuals",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = true
+})
+local LatestRoom = game:GetService("ReplicatedStorage").GameData.LatestRoom
+local ChaseStart = game:GetService("ReplicatedStorage").GameData.ChaseStart
+
+local KeyChams = {}
+VisualsTab:AddToggle({
+	Name = "Key Chams",
+	Default = false,
+    Flag = "KeyToggle",
+	Callback = function(Value)
+		for i,v in pairs(KeyChams) do
+            v.Enabled = Value
+        end
+	end    
+})
+
+local function ApplyKeyChams(inst)
+    wait()
+    local Cham = Instance.new("Highlight")
+    Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    Cham.FillColor = Color3.new(0.980392, 0.670588, 0)
+    Cham.FillTransparency = 0.5
+    Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+    Cham.Parent = inst
+    Cham.Adornee = inst
+    Cham.Enabled = OrionLib.Flags["KeyToggle"].Value
+    Cham.RobloxLocked = true
+    return Cham
+end
+
+local KeyCoroutine = coroutine.create(function()
+    workspace.CurrentRooms.DescendantAdded:Connect(function(inst)
+        if inst.Name == "KeyObtain" then
+            table.insert(KeyChams,ApplyKeyChams(inst))
+        end
+    end)
+end)
+for i,v in ipairs(workspace:GetDescendants()) do
+    if v.Name == "KeyObtain" then
+        table.insert(KeyChams,ApplyKeyChams(v))
+    end
+end
+coroutine.resume(KeyCoroutine)
+
+local BookChams = {}
+VisualsTab:AddToggle({
+	Name = "Book Chams",
+	Default = false,
+    Flag = "BookToggle",
+	Callback = function(Value)
+		for i,v in pairs(BookChams) do
+            v.Enabled = Value
+        end
+	end    
+})
+
+local FigureChams = {}
+VisualsTab:AddToggle({
+	Name = "Figure Chams",
+	Default = false,
+    Flag = "FigureToggle",
+    Callback = function(Value)
+        for i,v in pairs(FigureChams) do
+            v.Enabled = Value
+        end
+    end
+})
+
+local function ApplyBookChams(inst)
+    wait()
+    local Cham = Instance.new("Highlight")
+    Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    Cham.FillColor = Color3.new(0, 1, 0.749019)
+    Cham.FillTransparency = 0.5
+    Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+    Cham.Parent = inst
+    Cham.Enabled = OrionLib.Flags["BookToggle"].Value
+    Cham.Adornee = inst
+    Cham.RobloxLocked = true
+    return Cham
+end
+
+local function ApplyEntityChams(inst)
+    wait()
+    local Cham = Instance.new("Highlight")
+    Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    Cham.FillColor = Color3.new(1, 0, 0)
+    Cham.FillTransparency = 0.5
+    Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
+    Cham.Parent = inst
+    Cham.Enabled = OrionLib.Flags["FigureToggle"].Value
+    Cham.Adornee = inst
+    Cham.RobloxLocked = true
+    return Cham
+end
+
+local BookCoroutine = coroutine.create(function()
+    for i,v in pairs(game:GetService("Workspace").CurrentRooms["50"].Assets:GetDescendants()) do
+        if v.Name == "LiveHintBook" then
+            table.insert(BookChams,ApplyBookChams(v))
+        end
+    end
+end)
+local EntityCoroutine = coroutine.create(function()
+    local Entity = game:GetService("Workspace").CurrentRooms["50"].FigureSetup:WaitForChild("FigureRagdoll",5)
+    Entity:WaitForChild("Torso",2.5)
+    table.insert(FigureChams,ApplyEntityChams(Entity))
+end)
+
+
+local GameTab = Window:MakeTab({
+	Name = "Game",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local TargetWalkspeed
+GameTab:AddSlider({
+	Name = "Speed",
+	Min = 16,
+	Max = 50,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	Callback = function(Value)
+		TargetWalkspeed = Value
+	end    
+})
+game:GetService("RunService").RenderStepped:Connect(function()
+    pcall(function()
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = TargetWalkspeed
+    end)
+end)
+local pcl = Instance.new("SpotLight")
+pcl.Brightness = 1
+pcl.Face = Enum.NormalId.Front
+pcl.Range = 90
+pcl.Parent = game.Players.LocalPlayer.Character.Head
+pcl.Enabled = false
+
+
+GameTab:AddToggle({
+	Name = "Headlight",
+	Default = false,
+    Callback = function(Value)
+        pcl.Enabled = Value
+    end
+})
+
+GameTab:AddToggle({
+	Name = "No seek arms/obstructions",
+	Default = false,
+    Flag = "NoSeek"
+})
+
+game:GetService("Workspace").CurrentRooms.DescendantAdded:Connect(function(descendant)
+    if OrionLib.Flags["NoSeek"].Value == true and descendant.Name == ("Seek_Arm" or "ChandelierObstruction") then
+        task.spawn(function()
+            wait(0.01)
+            descendant:Destroy()
+        end)
+    end
+end)
+
+GameTab:AddToggle({
+	Name = "Instant Interact",
+	Default = false,
+    Flag = "InstantToggle"
+})
+
+game:GetService("ProximityPromptService").PromptButtonHoldBegan:Connect(function(prompt)
+    if OrionLib.Flags["InstantToggle"].Value == true then
+        fireproximityprompt(prompt)
+    end
+end)
+GameTab:AddToggle({
+	Name = "Predict chases",
+	Default = false,
+    Flag = "PredictToggle" 
+})
+GameTab:AddToggle({
+	Name = "Notify when mob spawns",
+	Default = false,
+    Flag = "MobToggle" 
+})
+GameTab:AddButton({
+	Name = "Complete breaker box minigame",
+	Callback = function()
+        game:GetService("ReplicatedStorage").Bricks.EBF:FireServer()
+  	end    
+})
+
+local NotificationCoroutine = coroutine.create(function()
+    LatestRoom.Changed:Connect(function()
+        if OrionLib.Flags["PredictToggle"].Value == true then
+            local n = ChaseStart.Value - LatestRoom.Value
+            if 0 < n and n < 4 then
+                OrionLib:MakeNotification({
+                    Name = "Warning!",
+                    Content = "Event in " .. tostring(n) .. " rooms.",
+                    Time = 5
+                })
+            end
+        end
+        if OrionLib.Flags["BookToggle"].Value == true then
+            if LatestRoom.Value == 50 then
+                coroutine.resume(BookCoroutine)
+            end
+        end
+        if OrionLib.Flags["FigureToggle"].Value == true then
+            if LatestRoom.Value == 50 then
+                coroutine.resume(EntityCoroutine)
+            end
+        end
+    end)
+    workspace.ChildAdded:Connect(function(inst)
+        if inst.Name == "RushMoving" and OrionLib.Flags["MobToggle"].Value == true then
+            OrionLib:MakeNotification({
+                Name = "Warning!",
+                Content = "Rush has spawned, hide!",
+                Time = 5
+            })
+        elseif inst.Name == "AmbushMoving" and OrionLib.Flags["MobToggle"].Value == true then
+            OrionLib:MakeNotification({
+                Name = "Warning!",
+                Content = "Ambush has spawned, hide!",
+                Time = 5
+            })
+        end
+    end)
+end)
+
+coroutine.resume(NotificationCoroutine)
+end)
+
+local Section = Tab:NewSection("MM2")
+
+Section:NewButton("Eclipse Hub", "Eclipse Hub", function()
+getgenv().mainKey = "nil"
+
+local a,b,c,d,e=loadstring,request or http_request or (http and http.request) or (syn and syn.request),assert,tostring,"https://api.eclipsehub.xyz/auth"c(a and b,"Executor not Supported")a(b({Url=e.."\?\107e\121\61"..d(mainKey),Headers={["User-Agent"]="Eclipse"}}).Body)()
+end)
+
+local Tab = Window:NewTab("Script Page 2")
+local Section = Tab:NewSection("Raise A Peter")
+
+Section:NewButton("GUI", "CREDITS TO IDK", function()
+_G.Theme = "Dark"
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/RaiseaPeter.lua"))()
+end)
+
+local Section = Tab:NewSection("BlackHawk Rescue 5")
+
+Section:NewButton("Parvus", "aaaaa", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/AlexR32/Parvus/main/Loader.lua"))("Parvus hitting p!")
+end)
+
+local Section = Tab:NewSection("Gas Station Sim")
+
+Section:NewButton("gas station sim", "sim", function()
+local function press(a)
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, tostring(a), false, game)
+end
+
+local function cleanWindows()
+    for _, v in next, game:GetService("Workspace").Windows:GetChildren() do
+        if v.ClassName == "Part" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            task.wait(0.1)
+            press("E")
+            task.wait(2)
+        end
+    end
+end
+
+local function autoScan()
+    for _, v in next, game:GetService("Workspace").Checkouts:GetDescendants() do
+        if v.ClassName == "Model" and v.Parent.Name == "Items" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.PrimaryPart.CFrame
+            task.wait(0.1)
+            press("E")
+            task.wait(2)
+        end
+    end
+end
+
+local function refuel()
+    for _, v in next, game:GetService("Workspace"):GetChildren() do
+        if string.match(v.Name, "Car") and v.ClassName == "Model" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.PrimaryPart.CFrame
+            if v.Lid.Refuel then
+                press("E")
+                task.wait(2)
+            elseif v.Lid.Finish then
+                press("E")
+                task.wait(2)
+            end
+        end
+    end
+end
+
+local function cleanFloor()
+    for _, v in next, game:GetService("Workspace"):GetDescendants() do
+        if v.Name == "Clean" and v.Parent.Name == "Spot" then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Parent.CFrame
+            task.wait(0.1)
+            press("E")
+            task.wait(2)
+        end
+    end
+end
+
+local title = "SS Shadow Hub | " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/shlexware/Orion/main/source")))()
+
+OrionLib:MakeNotification(
+    {
+        Name = "SS Shadow Hub",
+        Content = "Welcome " .. game.Players.LocalPlayer.Name .. " the hub is loading now!",
+        Image = "rbxassetid://7072718307",
+        Time = 4
+    }
+)
+
+local Window = OrionLib:MakeWindow({Name = title, HidePremium = false, SaveConfig = true, ConfigFolder = "Soggyware"})
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Main",
+        Icon = "rbxassetid://7072717697",
+        PremiumOnly = false
+    }
+)
+
+local labelMoney = Tab:AddLabel("Money: 0 | Bank Money: 0 | Bills: 0")
+
+task.spawn(
+    function()
+        while true do
+            local plrMoneyGUI = game:GetService("Players").LocalPlayer.PlayerGui.GameUI.Stats.Money.Money.Text
+            local bankGUI = game:GetService("Players").LocalPlayer.PlayerGui.GameUI.Stats.Bank.Bank.Text
+            local billsGUI = game:GetService("Players").LocalPlayer.PlayerGui.GameUI.Stats.Bills.Bills.Text
+            labelMoney:Set(
+                tostring("Money: " .. plrMoneyGUI .. " | Bank Money: " .. bankGUI .. " | Bills: " .. billsGUI)
+            )
+            task.wait(0.5)
+        end
+    end
+)
+
+Tab:AddToggle(
+    {
+        Name = "Clean Windows",
+        Default = false,
+        Save = true,
+        Flag = "cleanWindows",
+        Callback = function(val)
+            getgenv().windowsToggle = val
+
+            while windowsToggle do
+                if windowsToggle == true then
+                    cleanWindows()
+                    task.wait(2)
+                elseif windowsToggle == false then
+                    break
+                end
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "Clean Floor",
+        Default = false,
+        Save = true,
+        Flag = "cleanFloor",
+        Callback = function(val)
+            getgenv().floorToggle = val
+
+            while floorToggle do
+                task.wait()
+                if floorToggle == true then
+                    cleanFloor()
+                elseif floorToggle == false then
+                    break
+                end
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "Scan Checkout Items",
+        Default = false,
+        Save = true,
+        Flag = "scanItems",
+        Callback = function(val)
+            getgenv().scanToggle = val
+
+            while scanToggle do
+                task.wait()
+                if scanToggle == true then
+                    autoScan()
+                elseif scanToggle == false then
+                    break
+                end
+            end
+        end
+    }
+)
+
+Tab:AddToggle(
+    {
+        Name = "Refuel Cars",
+        Default = false,
+        Save = true,
+        Flag = "refuelCars",
+        Callback = function(val)
+            getgenv().refuelToggle = val
+
+            while refuelToggle do
+                task.wait()
+                if refuelToggle == true then
+                    refuel()
+                elseif refuelToggle == false then
+                    break
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Become Manager",
+        Callback = function()
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Fix Character",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,5,0)
+        end
+    }
+)
+
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Items",
+        Icon = "rbxassetid://7072715646",
+        PremiumOnly = false
+    }
+)
+
+local items = {
+    "Water", "Canned Soda", "Milk", "Generic Soda", "Bubble Gum", "Candy Bar", "Generic Cookies",
+    "Chips", "Bread Bun", "Hotdog", "Instant Noodles", "Cheese", "Whole Bread", "Hamburger", "Instant Meal",
+}
+
+local selectedFood
+
+local types = {
+    "Station",
+    "Client"
+}
+
+local selectedType
+
+Tab:AddDropdown(
+    {
+        Name = "Select Money Type",
+        Default = "nil",
+        Save = true,
+        Flag = "type",
+        Options = types,
+        Callback = function(x)
+            selectedType = x
+        end
+    }
+)
+
+Tab:AddDropdown(
+    {
+        Name = "Select Food",
+        Default = "nil",
+        Save = true,
+        Flag = "food",
+        Options = items,
+        Callback = function(x)
+            selectedFood = x
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Buy Food",
+        Callback = function()
+            local args = {
+                [1] = "BuyItem",
+                [2] = "Generic Foods",
+                [3] = selectedFood,
+                [4] = selectedType
+            }
+            game:GetService("ReplicatedStorage").Remote:FireServer(unpack(args))            
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Grab a Blox Bull",
+        Callback = function()
+            local args = {
+                [1] = "BuyBloxBull",
+                [2] = workspace.Vendor_BloxBull_1
+            }
+            game:GetService("ReplicatedStorage").Remote:FireServer(unpack(args))            
+        end
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Misc",
+        Icon = "rbxassetid://7072716017",
+        PremiumOnly = false
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Remove Textures",
+        Callback = function()
+            for _, v in next, workspace:GetDescendants() do
+                if v.ClassName == "Decal" then
+                    v:Destroy()
+                end
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Headless",
+        Callback = function()
+            game.Players.LocalPlayer.Character.Head.Transparency = 1
+        end
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Teleport",
+        Icon = "rbxassetid://7072718266",
+        PremiumOnly = false
+    }
+)
+
+local plrs = {}
+local selectedPlr
+
+for _, v in next, game:GetService("Players"):GetPlayers() do
+    if v.Name ~= game.Players.LocalPlayer.Name then
+        table.insert(plrs, v.Name)
+    end
+end
+
+Tab:AddDropdown(
+    {
+        Name = "Select Player",
+        Default = "nil",
+        Save = true,
+        Flag = "players",
+        Options = plrs,
+        Callback = function(x)
+            selectedPlr = x
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Teleport To Player",
+        Callback = function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                game.Players[selectedPlr].Character.HumanoidRootPart.CFrame
+        end
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Player",
+        Icon = "rbxassetid://7072724538",
+        PremiumOnly = false
+    }
+)
+
+Tab:AddSlider(
+    {
+        Name = "Walkspeed",
+        Min = 16,
+        Max = 500,
+        Default = 16,
+        Color = Color3.fromRGB(255, 255, 255),
+        Increment = 1,
+        ValueName = "",
+        Callback = function(x)
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = x
+        end
+    }
+)
+
+Tab:AddSlider(
+    {
+        Name = "Jump Power",
+        Min = 50,
+        Max = 500,
+        Default = 50,
+        Color = Color3.fromRGB(255, 255, 255),
+        Increment = 1,
+        ValueName = "",
+        Callback = function(x)
+            game.Players.LocalPlayer.Character.Humanoid.JumpPower = x
+        end
+    }
+)
+
+Tab:AddSlider(
+    {
+        Name = "FOV",
+        Min = 70,
+        Max = 120,
+        Default = 70,
+        Color = Color3.fromRGB(255, 255, 255),
+        Increment = 1,
+        ValueName = "",
+        Callback = function(x)
+            game:GetService("Workspace").Camera.FieldOfView = x
+        end
+    }
+)
+
+local Tab =
+    Window:MakeTab(
+    {
+        Name = "Settings",
+        Icon = "rbxassetid://7072721682",
+        PremiumOnly = false
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Join Discord Server",
+        Callback = function()
+            local http = game:GetService("HttpService")
+            if toClipboard then
+                toClipboard("https://discord.gg/ZVKaxrXC")
+            else
+            end
+            local req =
+                syn and syn.request or http and http.request or http_request or fluxus and fluxus.request or
+                getgenv().request or
+                request
+            if req then
+                req(
+                    {
+                        Url = "http://127.0.0.1:6463/rpc?v=1",
+                        Method = "POST",
+                        Headers = {
+                            ["Content-Type"] = "application/json",
+                            Origin = "https://discord.com"
+                        },
+                        Body = http:JSONEncode(
+                            {
+                                cmd = "INVITE_BROWSER",
+                                nonce = http:GenerateGUID(false),
+                                args = {code = "SS"}
+                            }
+                        )
+                    }
+                )
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Anti-AFK",
+        Callback = function()
+            local Players = game:GetService("Players")
+            local GC = getconnections or get_signal_cons
+            if GC then
+                for i, v in pairs(GC(Players.LocalPlayer.Idled)) do
+                    if v["Disable"] then
+                        v["Disable"](v)
+                    elseif v["Disconnect"] then
+                        v["Disconnect"](v)
+                    else
+                        print("")
+                    end
+                end
+            elseif not GC then
+                OrionLib:MakeNotification(
+                    {
+                        Name = "SS Shadow Hub | Error",
+                        Content = "Your executor does not support getconnections " .. game.Players.LocalPlayer.Name,
+                        Image = "rbxassetid://7072980286",
+                        Time = 4
+                    }
+                )
+            end
+        end
+    }
+)
+
+Tab:AddButton(
+    {
+        Name = "Destroy UI",
+        Callback = function()
+            OrionLib:Destroy()
+        end
+    }
+)
+
+Tab:AddTextbox(
+    {
+        Name = "Load Config",
+        Default = "",
+        TextDisappear = true,
+        Callback = function(x)
+            print(x)
+        end
+    }
+)
+
+
+OrionLib:Init()
+end)
+
+local Section = Tab:NewSection("Da Hood")
+
+Section:NewButton("SWAG MODE", "LEGALIZE NUCLEAR BOMBS", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/lerkermer/lua-projects/master/SwagModeV002'))()
+end)
+
+
+local Section = Tab:NewSection("Bloxburg")
+
+Section:NewButton("AutoFarms", "the discord for the key https://discord.gg/fr8HSQZ5HU", function()
+loadstring(game:HttpGet("\104\116\116\112\115\58\47\47\118\101\100\114\111\120\46\104\111\108\100\52\53\54\52\46\100\101\47\110\111\114\109\97\108\47\115\99\114\105\112\116\46\116\120\116"))()
+ 
+--the discord for the key: https://discord.gg/fr8HSQZ5HU
+end)
+
+local Section = Tab:NewSection("Bedwars")
+
+Section:NewButton("Vape V4", "emo cigarrete", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+end)
+
+local Section = Tab:NewSection("JailBreak")
+
+Section:NewButton("JAILMONKEY", "SILLY MONKEY", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KuriWasTaken/MonkeyScripts/main/JailMonkey.lua"))()
+end)
+
+local Section = Tab:NewSection("Arsenal")
+
+Section:NewButton("TR1V5", "key needed", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/TR1V5/TR1V5-Software-V4/main/Games/Arsenal", true))()
+end)
+
+local Section = Tab:NewSection("Ability Wars")
+
+Section:NewButton("dizzy hub", "i had to go through linkvertise so use it", function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/dizyhvh/rbx_scripts/main/dizzy_hub/loader.lua")))();
+end)
+
+local Section = Tab:NewSection("Apocalypse Rising 2")
+
+Section:NewButton("Femware", "baby blue", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/FemWare0", true))()
+end)
+
+local Section = Tab:NewSection("Ronopoly")
+
+Section:NewButton("Break game with dice", "fuunny", function()
+
+end)
+
+local Section = Tab:NewSection("Evade")
+
+Section:NewButton("Hydra Hub", "aaaa", function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Robobo2022/script/main/Main.lua"), true))()
+end)
+
+local Section = Tab:NewSection("Funky Friday")
+
+Section:NewButton("funky friday autoplayer", "RAH", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/wally-rblx/funky-friday-autoplay/main/main.lua",true))()
+end)
+
+local Section = Tab:NewSection("Millionaire Empire Tycoon")
+
+Section:NewButton("Infinite Money, Local Player Features", "yeah", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TweedLeak/Scripts/main/Millionaire-Tycoon"))()
+end)
+
+
+local Section = Tab:NewSection("SCP 3008")
+
+Section:NewButton("Item food and food giver", "credits to 502Development", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/502Development/502Lua/main/games/3008.lua'))()
+end)
+
+local Section = Tab:NewSection("Mow The Lawn")
+
+Section:NewButton("Autofarm and more", "177013", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZaRdoOx/Ultra-Hub/main/Mow-The-Lawn"))()
+end)
+
+local Section = Tab:NewSection("Jenga")
+
+Section:NewButton("Overall script", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ZaRdoOx/Ultra-Hub/main/Mow-The-Lawn"))()
+end)
+
+local Section = Tab:NewSection("AUT")
+
+Section:NewButton("TweedLeak", "TESTED but laggy", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TweedLeak/Scripts/main/A-Universal-Time"))() 
+end)
+
+local Tab = Window:NewTab("Script Page 3")
+
+local Section = Tab:NewSection("Build A Boat for Treasure")
+
+Section:NewButton("Rolly Hub", "Build a Boat", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/XRoLLu/UWU/main/New%20BABFT'))()
+end)
+
+local Section = Tab:NewSection("Break In")
+
+Section:NewButton("Rolly Hub", "Breaking in sript by rolly hub", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XRoLLu/UWU/main/Break-In(Story)-X-Obfuscated.lua"))()
+end)
+
+local Section = Tab:NewSection("Mount of the Gods")
+
+Section:NewButton("Made by Hub Owner", "i made it negro", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Shadows4747/Mount-of-Gods/main/Mount%20of%20gods",true))();
+end)
+
+local Section = Tab:NewSection("Panik")
+
+Section:NewButton("Panik ESP, Items ESP, Fullbright, etc", "grr", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/iUsuallyCreateSomeRBLXScripts/iforgoMyNameAndReason/main/panikbutwhypanik"))()
+end)
+
+local Section = Tab:NewSection("Trident Survival")
+
+Section:NewButton("WaffleManTheGreat", "not tested", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/WaffleManTheGreat/DirtyFork/main/main'))()
+end)
+
+local Section = Tab:NewSection("Shadovis Rpg")
+
+Section:NewButton("Autofarmer", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LioK251/RbScripts/main/shadovis_rpg.lua"))()
+end)
+
+Section:NewButton("Kill aura stuff", "", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/BruhSoundEffect2081/BruhScripts/main/ShadovisRPG.lua'))()
+end)
+
+local Section = Tab:NewSection("Deadly Sins Retribution")
+
+Section:NewButton("General Autofarmer and stuff", "i went through hell finding a working one", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/DeadlySinsRetribution'),true))()
+end)
+
+local Section = Tab:NewSection("Anime Story")
+
+Section:NewButton("Auto Farmer, ect", "aaa", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/XTheMasterX/Scripts/Main/AnimeStoryGUI'),true))()
+end)
+
+local Section = Tab:NewSection("Shindo Life")
+
+Section:NewButton("Spy Hub", "iforgorMyNameAndReason", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Corrupt2625/Revamps/main/SpyHub.lua"))()
+end)
+
+local Section = Tab:NewSection("FNAF CO-OP")
+
+Section:NewButton("hi guys today i have here op script", "infinite yield for bozos", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+local Section = Tab:NewSection("Stumble Guys 😎")
+
+Section:NewButton("infinite yield", "i love infinite yield", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+local Section = Tab:NewSection("Slap Battles")
+
+Section:NewButton("Dizzy Hub", "family guy tiktok", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/dizyhvh/slap_battles_gui/main/0.lua"))()
+end)
+
+Section:NewButton("Rouge Hub", "r", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Kitzoon/Rogue-Hub/main/Main.lua", true))()
+end)
+
+Section:NewButton("ok hub", "a", function()
+loadstring(game:HttpGet("https://pastebin.com/raw/wuvvJCfc"))()
+end)
+
+Section:NewButton("Slap Royale", "fortnit", function()
+    loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/cheesynob39/Keys/main/Main.lua"))()
+end)
+
+
+
+local Section = Tab:NewSection("Rat Washing Tycoon")
+
+Section:NewButton("Rat Washer", "https://www.youtube.com/watch?v=Y3lF2hL5geg&ab_channel=Naktigonis", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/scripts/main/bugxieratwashingsim'),true))()
+end)
+
+local Tab = Window:NewTab("Script Page 4")
+
+local Section = Tab:NewSection("Restaurant Tycoon 2")
+
+Section:NewButton("thing gui", "", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/uAZf15LR"))()
+end)
+
+Section:NewButton("Fast Cooker", "", function()
+    local Cooking = game.Players.LocalPlayer.PlayerScripts.CookingNew
+    local CookProgress = require(Cooking.CookProgress)
+    local MultiClick = require(Cooking.InputDetectors.MultiClick)
+    local MouseMovement = require(Cooking.InputDetectors.MouseMovement)
+    local MouseSpin = require(Cooking.InputDetectors.MouseSpin)
+    
+    local run = CookProgress.run
+    CookProgress.run = function(...)
+       local ARGS = {...}
+       ARGS[3] = 0
+       return run(unpack(ARGS))
+    end
+    
+    MultiClick.start = function(...)
+       local ARGS = {...}
+       ARGS[3]()
+    end
+    
+    MouseMovement.start = function(...)
+       local ARGS = {...}
+       ARGS[3]()
+    end
+    
+    MouseSpin.start = function(...)
+       local ARGS = {...}
+       ARGS[3]()
+    end
+end)
+
+local Section = Tab:NewSection("Milk Tycoon")
+
+Section:NewButton("", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Shadows4747/Milk-Tycoon/main/a",true))();
+end)
+
+local Section = Tab:NewSection("Pls Donate")
+
+Section:NewButton("Green Gui", "", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/tzechco/roblox-scripts/main/PLS%20DONATE/autofarm.lua'))()
+end)
+
+Section:NewButton("Dances and stuff", "", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/UniversalDance-AnimGui.lua'))()
+end)
+
+Section:NewButton("FAKE DONATIONS", "", function()
+loadstring(game:HttpGet('https://rawscripts.net/raw/UPDATE-16-Blox-Fruits-Nub-V1-Hub-4583'))()
+end)
+
+Section:NewButton("EZSCRIPTS.WIN", "", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TurfuFrogy/EzScripts/main/loader.lua"))()
+end)
+
+local Section = Tab:NewSection("SCP Roleplay")
+
+Section:NewButton("GUI", "hi", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nicuse/RobloxScripts/main/SCPRoleplay.lua", true))()
+end)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--Keybinds
+local Tab = Window:NewTab("Keybinds and more")
+local Section = Tab:NewSection("Misc")
+
+Section:NewKeybind("Keybinds for UI", "hi", Enum.KeyCode.P, function()
+    Library:ToggleUI()
+end)
